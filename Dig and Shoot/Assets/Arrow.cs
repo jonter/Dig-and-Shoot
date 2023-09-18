@@ -18,12 +18,5 @@ public class Arrow : MonoBehaviour
         Destroy(gameObject, 5);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Launch();
-        }
-    }
+    
 }
