@@ -9,7 +9,9 @@ public class EnemyBrain : MonoBehaviour
 
     [SerializeField] float speed = 3;
     [SerializeField] float attackDistance = 1;
-    [SerializeField] float damage = 10;
+    [SerializeField] protected float damage = 10;
+
+    protected BaseHealth target = null;
 
     // Start is called before the first frame update
     void Start()
@@ -34,14 +36,23 @@ public class EnemyBrain : MonoBehaviour
         Physics.Raycast(origin, dir, out hitInfo, attackDistance, baseLayer);
         if(hitInfo.transform)
         {
+            target = hitInfo.transform.GetComponent<BaseHealth>();
             rb.velocity = new Vector3(0, 0, 0);
             anim.SetBool("attack", true);
         }
         else
-        {
+        { 
             rb.velocity = transform.forward * speed;
             anim.SetBool("attack", false);
         }
         
     }
+
+    public virtual void Attack()
+    {
+        if (target == null) return;
+        target.GetDamage(damage);
+
+    }
+
 }

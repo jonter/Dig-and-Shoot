@@ -31,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
     {
         isAlive = false;
         GetComponent<EnemyBrain>().enabled = false;
+        GetComponent<Collider>().enabled = false;
 
         int rand = Random.Range(0, 2);
         if (rand == 0) anim.SetTrigger("death1");
