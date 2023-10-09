@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     Animator anim;
     [SerializeField] float hp = 50;
     bool isAlive = true;
+    [SerializeField] int coinsForKill = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class EnemyHealth : MonoBehaviour
         else anim.SetTrigger("death2");
 
         Destroy(gameObject, 5);
+        FindObjectOfType<MoneyManager>().AddCoins(coinsForKill);
     }
 
 }
