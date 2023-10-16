@@ -1,29 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject[] enemyPrefabs;
-    float timeBetween = 2;
+
+    [SerializeField] TMP_Text waveText;
+    [SerializeField] Wave[] waves;
+    float timeBetween = 5;
+
+    int waveCount;
+    int currentWave = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnNewEnemy());
+        waveText.text = "";
+        waveCount = waves.Length;
+        StartCoroutine(SpawnWaves());
     }
 
-    IEnumerator SpawnNewEnemy()
+    IEnumerator SpawnWaves()
     {
-        yield return new WaitForSeconds(timeBetween);
-        Vector3 spawnPos = 
-            new Vector3(Random.Range(-13f, 13f), 0, transform.position.z) ;
-        int rand = Random.Range(0, enemyPrefabs.Length);
-        GameObject clone = Instantiate(enemyPrefabs[rand]);
-        clone.transform.position = spawnPos;
+        yield return new WaitForSeconds(3);
 
-        StartCoroutine(SpawnNewEnemy());
+        for (int i = 0; i < waves.Length; i++)
+        {
+            currentWave++;
+            waveText.text = $"Волна: {currentWave}/{waveCount}";
+
+            yield return StartCoroutine(waves[i].SpawnAllWave(transform.position));
+            yield return new WaitForSeconds(timeBetween);
+        }
+
+        StartCoroutine(CheckEnemies());
     }
+
+    IEnumerator CheckEnemies()
+    {
+        yield return new WaitForSeconds(1);
+        EnemyHealth[] enemies = FindObjectsOfType<EnemyHealth>();
+        if(enemies.Length > 0)
+        {
+            StartCoroutine(CheckEnemies());
+        }
+        else
+        {
+            waveText.text = "Победа";
+        }
+        
+
+    }
+
+   
 
    
 }

@@ -9,6 +9,16 @@ public class EnemyHealth : MonoBehaviour
     bool isAlive = true;
     [SerializeField] int coinsForKill = 5;
 
+    public void IncreaseHP(float hpMult)
+    {
+        hp = hp * hpMult;
+    }
+
+    public void IncreaseCoins(float coinsMult)
+    {
+        coinsForKill =  (int)(coinsForKill * coinsMult);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
