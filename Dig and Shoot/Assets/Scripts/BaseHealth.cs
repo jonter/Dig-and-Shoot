@@ -33,7 +33,7 @@ public class BaseHealth : MonoBehaviour
     void DestroyBase()
     {
         isAlive = false;
-        print("Ты проиграл");
+        FindObjectOfType<GameOverLogic>().Lose();
     }
 
     

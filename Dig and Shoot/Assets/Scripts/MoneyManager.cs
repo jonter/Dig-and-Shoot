@@ -7,6 +7,12 @@ public class MoneyManager : MonoBehaviour
 {
     int coins = 0;
     TMP_Text moneyText;
+
+    public int GetCoins()
+    {
+        return coins;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

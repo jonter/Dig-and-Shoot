@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PauseLogic : MonoBehaviour
 {
@@ -13,14 +14,31 @@ public class PauseLogic : MonoBehaviour
 
     public void MakePause()
     {
+        if (pausePanel.activeSelf == true) return;
         pausePanel.SetActive(true);
         Time.timeScale = 0;
+        pausePanel.transform.localScale = new Vector3(0, 0, 0);
+        pausePanel.transform.DOScale(1, 0.4f)
+            .SetEase(Ease.OutBack).SetUpdate(true);
     }
 
     public void ContinueGame()
     {
-        pausePanel.SetActive(false);
+        StartCoroutine(DisablePanel());
         Time.timeScale = 1;
+        pausePanel.transform.DOScale(0, 0.4f)
+            .SetEase(Ease.InBack).SetUpdate(true);
     }
-    
+
+    IEnumerator DisablePanel()
+    {
+        yield return new WaitForSeconds(0.4f);
+        pausePanel.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        pausePanel.transform.DOKill();
+    }
+
 }

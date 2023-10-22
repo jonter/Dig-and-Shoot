@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
 public class BallistaAim : MonoBehaviour
 {
@@ -31,11 +32,20 @@ public class BallistaAim : MonoBehaviour
         startPos = currentArrow.transform.localPosition;
         startRot = currentArrow.transform.localRotation;
     }
-    
+
+    private void OnDisable()
+    {
+        starter.DOKill();
+        handle.DOKill();
+    }
+
 
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale <= 0.1f) return;
+        if (EventSystem.current.IsPointerOverGameObject() == true) return;
+
         if (Input.GetMouseButton(0))
         {
             Aim();

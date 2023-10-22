@@ -48,6 +48,7 @@ public class EnemySpawner : MonoBehaviour
         else
         {
             waveText.text = "Победа";
+            FindObjectOfType<GameOverLogic>().Win();
         }
         
 
