@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyBrain : MonoBehaviour
 {
-    Rigidbody rb;
-    Animator anim;
+    protected Rigidbody rb;
+    protected Animator anim;
 
     [SerializeField] float speed = 3;
     [SerializeField] float attackDistance = 1;
@@ -14,7 +14,7 @@ public class EnemyBrain : MonoBehaviour
     protected BaseHealth target = null;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
@@ -23,11 +23,12 @@ public class EnemyBrain : MonoBehaviour
 
     private void OnDisable()
     {
+        if (rb == null) return;
         rb.velocity = new Vector3();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         Vector3 origin = transform.position;
         Vector3 dir = transform.forward;
