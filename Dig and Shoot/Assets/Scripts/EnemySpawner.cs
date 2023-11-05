@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class EnemySpawner : MonoBehaviour
 {
-
+    public event Action OnWin;
     [SerializeField] TMP_Text waveText;
     [SerializeField] Wave[] waves;
     float timeBetween = 5;
@@ -48,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
         else
         {
             waveText.text = "Победа";
-            FindObjectOfType<GameOverLogic>().Win();
+            OnWin();
         }
         
 

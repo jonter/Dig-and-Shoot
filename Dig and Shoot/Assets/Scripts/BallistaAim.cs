@@ -31,6 +31,14 @@ public class BallistaAim : MonoBehaviour
 
         startPos = currentArrow.transform.localPosition;
         startRot = currentArrow.transform.localRotation;
+
+        FindObjectOfType<BaseHealth>().OnDeath += DisableBallista;
+        FindObjectOfType<EnemySpawner>().OnWin += DisableBallista;
+    }
+
+    void DisableBallista()
+    {
+        enabled = false;
     }
 
     private void OnDisable()

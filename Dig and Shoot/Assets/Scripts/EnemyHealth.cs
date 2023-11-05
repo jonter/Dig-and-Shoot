@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -8,10 +9,13 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] float hp = 50;
     bool isAlive = true;
     [SerializeField] int coinsForKill = 5;
+    Slider healthBar;
+    float maxHP;
 
     public void IncreaseHP(float hpMult)
     {
         hp = hp * hpMult;
+        maxHP = hp;
     }
 
     public void IncreaseCoins(float coinsMult)
@@ -23,6 +27,8 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        healthBar = GetComponentInChildren<Slider>();
+        healthBar.gameObject.SetActive(false);
     }
 
     public void GetDamage(float damage)
@@ -30,6 +36,8 @@ public class EnemyHealth : MonoBehaviour
         if (isAlive == false) return;
 
         hp -= damage;
+        healthBar.gameObject.SetActive(true);
+        healthBar.value = hp / maxHP;
 
         if(hp <= 0.0001f)
         {
@@ -43,6 +51,7 @@ public class EnemyHealth : MonoBehaviour
         isAlive = false;
         GetComponent<EnemyBrain>().enabled = false;
         GetComponent<Collider>().enabled = false;
+        healthBar.gameObject.SetActive(false);
 
         int rand = Random.Range(0, 2);
         if (rand == 0) anim.SetTrigger("death1");

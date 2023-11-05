@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class BaseHealth : MonoBehaviour
 {
+    public event Action OnDeath;
+
     float maxHP = 100;
     float hp;
 
@@ -33,7 +36,7 @@ public class BaseHealth : MonoBehaviour
     void DestroyBase()
     {
         isAlive = false;
-        FindObjectOfType<GameOverLogic>().Lose();
+        OnDeath();
     }
 
     

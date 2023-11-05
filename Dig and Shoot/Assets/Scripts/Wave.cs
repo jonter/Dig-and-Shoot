@@ -14,7 +14,7 @@ public class Wave : ScriptableObject
     {
         for (int i = 0; i < enemyPrefabs.Length; i++)
         {
-            float randomX = Random.Range(-13f, 13f);
+            float randomX = Random.Range(-12f, 12f);
             Vector3 pos = spawnerPos + new Vector3(randomX, 0, 0);
             Quaternion rot = Quaternion.Euler(0, 180, 0);
             GameObject clone = Instantiate(enemyPrefabs[i], pos, rot);

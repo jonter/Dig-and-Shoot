@@ -6,14 +6,23 @@ using DG.Tweening;
 public class PauseLogic : MonoBehaviour
 {
     [SerializeField] GameObject pausePanel;
+    bool isGameOver = false;
     // Start is called before the first frame update
     void Start()
     {
         pausePanel.SetActive(false);
+        FindObjectOfType<BaseHealth>().OnDeath += GameOver;
+        FindObjectOfType<EnemySpawner>().OnWin += GameOver;
+    }
+
+    void GameOver()
+    {
+        isGameOver = true;
     }
 
     public void MakePause()
     {
+        if (isGameOver == true) return;
         if (pausePanel.activeSelf == true) return;
         pausePanel.SetActive(true);
         Time.timeScale = 0;

@@ -9,6 +9,7 @@ public class AnybisBoss : EnemyBrain
 
     bool isAction = false;
     [SerializeField] float skillReload = 10;
+    [SerializeField] float summonHpMult = 1;
 
     protected override void Start()
     {
@@ -45,6 +46,7 @@ public class AnybisBoss : EnemyBrain
         Quaternion rot = Quaternion.Euler(0, 180, 0);
         GameObject clone = Instantiate(enemyPrefab, spawnPos, rot);
         clone.GetComponent<EnemyBrain>().enabled = false;
+        clone.GetComponent<EnemyHealth>().IncreaseHP(summonHpMult);
         clone.transform.DOMoveY(0, 0.5f);
         Vector3 rot2 = new Vector3(0, 360, 0);
         clone.transform.DORotate(rot2, 0.5f, RotateMode.WorldAxisAdd);

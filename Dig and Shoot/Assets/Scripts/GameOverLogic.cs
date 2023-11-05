@@ -14,7 +14,8 @@ public class GameOverLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        FindObjectOfType<BaseHealth>().OnDeath += Lose;
+        FindObjectOfType<EnemySpawner>().OnWin += Win;
     }
 
     private void OnDisable()
@@ -31,7 +32,7 @@ public class GameOverLogic : MonoBehaviour
         winPanel.GetComponentInChildren<RoundMoney>().DisplayMoney(coinsForRound);
         winPanel.transform.localScale = new Vector3(0, 0, 0);
         winPanel.transform.DOScale(1, 0.4f).SetEase(Ease.OutBack).SetUpdate(true);
-
+        StartCoroutine(SlowTime());
     }
 
     public void Lose()
@@ -43,6 +44,13 @@ public class GameOverLogic : MonoBehaviour
         losePanel.GetComponentInChildren<RoundMoney>().DisplayMoney(coinsForRound);
         losePanel.transform.localScale = new Vector3(0, 0, 0);
         losePanel.transform.DOScale(1, 0.4f).SetEase(Ease.OutBack).SetUpdate(true);
+        StartCoroutine(SlowTime());
+    }
+
+    IEnumerator SlowTime()
+    {
+        yield return new WaitForSeconds(2);
+        Time.timeScale = 0.3f;
     }
 
     public void Restart()

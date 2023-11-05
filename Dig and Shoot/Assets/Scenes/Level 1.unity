@@ -5303,6 +5303,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 7428598597280529697, guid: 26132df25af75c74dbcbd7986122a4d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9211225192236210289, guid: 26132df25af75c74dbcbd7986122a4d6, type: 3}
       propertyPath: m_Name
       value: Ballista
