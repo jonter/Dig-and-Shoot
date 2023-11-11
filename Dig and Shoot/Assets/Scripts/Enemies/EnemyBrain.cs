@@ -12,6 +12,7 @@ public class EnemyBrain : MonoBehaviour
     [SerializeField] protected float damage = 10;
 
     protected BaseHealth target = null;
+    bool isFrozen = false;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -27,9 +28,20 @@ public class EnemyBrain : MonoBehaviour
         rb.velocity = new Vector3();
     }
 
+    public IEnumerator FreezeEnemyCoroutine(float duration)
+    {
+        rb.velocity = new Vector3();
+        anim.enabled = false;
+        isFrozen = true;
+        yield return new WaitForSeconds(duration);
+        anim.enabled = true;
+        isFrozen = false;
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {
+        if (isFrozen == true) return;
         Vector3 origin = transform.position;
         Vector3 dir = transform.forward;
         LayerMask baseLayer = LayerMask.GetMask("Base");

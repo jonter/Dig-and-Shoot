@@ -11,6 +11,7 @@ public class BallistaAim : MonoBehaviour
 
     Arrow currentArrow;
     [SerializeField] GameObject arrowPrefab;
+    [SerializeField] GameObject ghostArrowPrefab;
 
     float fireRate = 2;
     bool isReloaded = true;
@@ -21,6 +22,25 @@ public class BallistaAim : MonoBehaviour
     [SerializeField] Transform handle;
     [SerializeField] Transform starter;
     float animSpeed;
+    bool isGhost = false;
+
+    public IEnumerator EnableGhostCoroutine(float duration)
+    {
+        isGhost = true; 
+
+        yield return new WaitForSeconds(duration);
+        isGhost = false;
+    }
+
+
+    public IEnumerator IncreaseFireRateCoroutine(float duration)
+    {
+        fireRate *= 2;
+        animSpeed = 1 / fireRate;
+        yield return new WaitForSeconds(duration);
+        fireRate /= 2;
+        animSpeed = 1 / fireRate;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -85,7 +105,10 @@ public class BallistaAim : MonoBehaviour
         MakeShootAnim();
         yield return new WaitForSeconds(1 / fireRate);
 
-        GameObject newArrow = Instantiate(arrowPrefab, transform);
+        GameObject newArrow;
+        if (isGhost == true) newArrow = Instantiate(ghostArrowPrefab, transform);
+        else newArrow = Instantiate(arrowPrefab, transform);
+
         newArrow.transform.localPosition = startPos;
         newArrow.transform.localRotation = startRot;
         currentArrow = newArrow.GetComponent<Arrow>();

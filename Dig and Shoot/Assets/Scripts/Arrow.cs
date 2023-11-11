@@ -6,10 +6,10 @@ public class Arrow : MonoBehaviour
 {
     Rigidbody rb;
     float speed = 20;
-    bool isLaunched = false;
-    float damage = 10;
+    protected bool isLaunched = false;
+    protected float damage = 10;
 
-    public void Launch()
+    public virtual void Launch()
     {
         rb = GetComponent<Rigidbody>();
         isLaunched = true;
@@ -18,7 +18,7 @@ public class Arrow : MonoBehaviour
         Destroy(gameObject, 5);
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (isLaunched == false) return;
 
