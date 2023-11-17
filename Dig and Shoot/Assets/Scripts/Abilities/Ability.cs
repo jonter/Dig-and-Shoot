@@ -17,6 +17,14 @@ public abstract class Ability : MonoBehaviour
         skillButton.onClick.AddListener(Activate);
         reloadPanel = skillButton.transform.GetChild(1).GetComponent<Image>();
         reloadPanel.fillAmount = 0;
+        FindObjectOfType<BaseHealth>().OnDeath += DeactivateAbility;
+        FindObjectOfType<EnemySpawner>().OnWin += DeactivateAbility;
+    }
+
+    void DeactivateAbility()
+    {
+        isReloaded = false;
+        enabled = false;
     }
 
     protected virtual void Activate()

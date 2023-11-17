@@ -13,7 +13,12 @@ public class ExplosiveBarrel : MonoBehaviour
         FindObjectOfType<BaseHealth>().OnDeath += MakeBoom;
     }
 
-    void MakeBoom()
+    private void OnDestroy()
+    {
+        FindObjectOfType<BaseHealth>().OnDeath -= MakeBoom;
+    }
+
+    protected virtual void MakeBoom()
     {
         //Проиграть звук взрыва
         burstVFX.transform.parent = null;
