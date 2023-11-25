@@ -33,7 +33,28 @@ public class GameOverLogic : MonoBehaviour
         winPanel.transform.localScale = new Vector3(0, 0, 0);
         winPanel.transform.DOScale(1, 0.4f).SetEase(Ease.OutBack).SetUpdate(true);
         StartCoroutine(SlowTime());
+        SaveCoins(coinsForRound);
+        SaveLevel();
     }
+
+    void SaveCoins(int coins)
+    {
+        int allCoins = PlayerPrefs.GetInt("coins");
+        PlayerPrefs.SetInt("coins", allCoins + coins);
+
+    }
+
+    void SaveLevel()
+    {
+        int max = PlayerPrefs.GetInt("level");
+        int index = SceneManager.GetActiveScene().buildIndex;
+        if(index > max)
+        {
+            PlayerPrefs.SetInt("level", index);
+        }
+
+    }
+
 
     public void Lose()
     {
@@ -45,6 +66,7 @@ public class GameOverLogic : MonoBehaviour
         losePanel.transform.localScale = new Vector3(0, 0, 0);
         losePanel.transform.DOScale(1, 0.4f).SetEase(Ease.OutBack).SetUpdate(true);
         StartCoroutine(SlowTime());
+        SaveCoins(coinsForRound);
     }
 
     IEnumerator SlowTime()

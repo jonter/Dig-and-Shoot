@@ -13,7 +13,7 @@ public class ExplosiveBarrel : MonoBehaviour
         FindObjectOfType<BaseHealth>().OnDeath += MakeBoom;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         FindObjectOfType<BaseHealth>().OnDeath -= MakeBoom;
     }

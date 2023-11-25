@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class BarrelWithDamage : ExplosiveBarrel
 {
-    float explosionRadius = 10;
+    float explosionRadius = 6;
     float damage = 100;
 
     public void Launch(Vector3 point, float d)
