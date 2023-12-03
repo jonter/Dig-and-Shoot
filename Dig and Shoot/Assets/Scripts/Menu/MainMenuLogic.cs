@@ -23,6 +23,9 @@ public class MainMenuLogic : MonoBehaviour
 
     bool isAnim = false;
 
+    [SerializeField] Transform cavePoint;
+    [SerializeField] Transform mainPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +52,8 @@ public class MainMenuLogic : MonoBehaviour
         mainPanel.transform.DOLocalMoveY(1500, 0.5f).SetEase(Ease.InBack);
         yield return new WaitForSeconds(0.5f);
         mainPanel.SetActive(false);
-        // Двигаем камеру к пещере
+        Camera.main.transform.DOMove(cavePoint.position, 1);
+        Camera.main.transform.DORotate(cavePoint.eulerAngles, 1);
         // Добавить затемнение экрана
         yield return new WaitForSeconds(1);
         int index = PlayerPrefs.GetInt("level");
