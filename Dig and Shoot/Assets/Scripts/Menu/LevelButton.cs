@@ -8,10 +8,11 @@ using UnityEngine.SceneManagement;
 public class LevelButton : MonoBehaviour
 {
     int levelIndex = 1;
-    public void SetupButton(int index)
+    public void SetupButton(int index, bool isEnable)
     {
         GetComponentInChildren<TMP_Text>().text = "" + index;
         levelIndex = index;
+        GetComponent<Button>().interactable = isEnable;
     }
 
     private void Start()
@@ -21,7 +22,8 @@ public class LevelButton : MonoBehaviour
 
     void LoadLevel()
     {
-        SceneManager.LoadScene(levelIndex);
+        MainMenuLogic mm = FindObjectOfType<MainMenuLogic>();
+        StartCoroutine(mm.LoadLevelCoroutine(levelIndex));
     }
 
 

@@ -7,6 +7,16 @@ public class FreezeAbility : Ability
     [SerializeField] GameObject frostVFX;
     float freezeTime = 4;
 
+    protected override void Start()
+    {
+        reloadTime = GameStats.GetReloadTime("frost");
+        freezeTime = GameStats.GetFrostTime();
+        if (reloadTime == 0 || reloadTime > 1000)
+        {
+            skillButton.gameObject.SetActive(false);
+        }
+        base.Start();
+    }
     protected override void Activate()
     {
         if (isReloaded == false) return;

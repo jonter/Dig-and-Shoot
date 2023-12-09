@@ -45,6 +45,7 @@ public class BallistaAim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fireRate = GameStats.GetFireRate();
         animSpeed = 1 / fireRate;
         currentArrow = GetComponentInChildren<Arrow>(); 
         myCamera = Camera.main;

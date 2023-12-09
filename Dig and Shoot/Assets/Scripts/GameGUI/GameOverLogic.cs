@@ -10,12 +10,14 @@ public class GameOverLogic : MonoBehaviour
     [SerializeField] GameObject losePanel;
     
     bool isOver = false;
+    bool isAnim = false;
 
     // Start is called before the first frame update
     void Start()
     {
         FindObjectOfType<BaseHealth>().OnDeath += Lose;
         FindObjectOfType<EnemySpawner>().OnWin += Win;
+        TransitionPanel.HidePanel();
     }
 
     private void OnDisable()
@@ -77,23 +79,44 @@ public class GameOverLogic : MonoBehaviour
 
     public void Restart()
     {
+        if (isAnim == true) return;
+        isAnim = true;
         int index = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(index);
     }
 
     public void GoNextLevel()
     {
+        if (isAnim == true) return;
+        isAnim = true;
+        StartCoroutine(GoNextCoroutine());
+    }
+    IEnumerator GoNextCoroutine()
+    {
+        TransitionPanel.ShowPanel();
+        yield return new WaitForSecondsRealtime(1);
         int index = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(index + 1);
     }
 
     public void GoMenu()
     {
+        if (isAnim == true) return;
+        isAnim = true;
+        StartCoroutine(GoMenuCoroutine());
+    }
+
+    IEnumerator GoMenuCoroutine()
+    {
+        TransitionPanel.ShowPanel();
+        yield return new WaitForSecondsRealtime(1);
         SceneManager.LoadScene("Menu");
     }
 
     public void ShowAds()
     {
+        if (isAnim == true) return;
+        
         int coinsForRound = FindObjectOfType<MoneyManager>().GetCoins();
         coinsForRound = coinsForRound * 2;
         GetComponentInChildren<RoundMoney>().DisplayMoney(coinsForRound);

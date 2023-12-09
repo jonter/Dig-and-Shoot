@@ -16,6 +16,7 @@ public class BaseHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxHP = GameStats.GetBaseHealth();
         hp = maxHP;
         healthBar.value = hp / maxHP;
     }

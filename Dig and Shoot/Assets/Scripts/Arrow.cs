@@ -5,12 +5,13 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     Rigidbody rb;
-    float speed = 20;
+    float speed = 25;
     protected bool isLaunched = false;
     protected float damage = 10;
 
     public virtual void Launch()
     {
+        damage = GameStats.GetDamage();
         rb = GetComponent<Rigidbody>();
         isLaunched = true;
         rb.isKinematic = false;

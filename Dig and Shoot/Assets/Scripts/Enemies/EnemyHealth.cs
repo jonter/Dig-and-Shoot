@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     Slider healthBar;
     float maxHP;
 
+
     public void IncreaseHP(float hpMult)
     {
         hp = hp * hpMult;

@@ -16,6 +16,17 @@ public class BarrelAbility : Ability
     [SerializeField] GameObject aimPoint;
     float damage = 100;
 
+    protected override void Start()
+    {
+        reloadTime = GameStats.GetReloadTime("burst");
+        damage = GameStats.GetBurstDamage();
+        if (reloadTime == 0 || reloadTime > 1000)
+        {
+            skillButton.gameObject.SetActive(false);
+        }
+        base.Start();
+    }
+
     protected override void Activate()
     {
         if (isReloaded == false) return;

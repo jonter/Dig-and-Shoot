@@ -29,6 +29,7 @@ public class MainMenuLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        TransitionPanel.HidePanel();
         upgradesButton.onClick.AddListener(GoUpgrades);
         levelsButton.onClick.AddListener(GoLevels);
         backButtonLevels.onClick.AddListener(BackToMain);
@@ -54,10 +55,27 @@ public class MainMenuLogic : MonoBehaviour
         mainPanel.SetActive(false);
         Camera.main.transform.DOMove(cavePoint.position, 1);
         Camera.main.transform.DORotate(cavePoint.eulerAngles, 1);
-        // Добавить затемнение экрана
+        TransitionPanel.ShowPanel();
         yield return new WaitForSeconds(1);
         int index = PlayerPrefs.GetInt("level");
         SceneManager.LoadScene(index + 1);
+    }
+
+    public IEnumerator LoadLevelCoroutine(int level)
+    {
+        if (isAnim == true) yield break;
+        isAnim = true;
+        mainPanel.transform.DOLocalMoveY(1500, 0.5f).SetEase(Ease.InBack);
+        levelPanel.transform.DOLocalMoveY(2000, 0.5f).SetEase(Ease.InBack);
+        yield return new WaitForSeconds(0.5f);
+        mainPanel.SetActive(false);
+        
+        Camera.main.transform.DOMove(cavePoint.position, 1);
+        Camera.main.transform.DORotate(cavePoint.eulerAngles, 1);
+        TransitionPanel.ShowPanel();
+        yield return new WaitForSeconds(1);
+        
+        SceneManager.LoadScene(level);
     }
 
     void GoUpgrades()
