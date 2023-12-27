@@ -12,7 +12,7 @@ public class EnemyBrain : MonoBehaviour
     [SerializeField] protected float damage = 10;
 
     protected BaseHealth target = null;
-    bool isFrozen = false;
+    protected bool isFrozen = false;
 
     // Start is called before the first frame update
     protected virtual void Start()

@@ -27,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxHP = hp;
         anim = GetComponent<Animator>();
         healthBar = GetComponentInChildren<Slider>();
         healthBar.gameObject.SetActive(false);

@@ -669,6 +669,7 @@ MonoBehaviour:
   damage: 25
   enemyPrefab: {fileID: 7651784154023787937, guid: fe462a44dd769a74ca9242dfa173b1d8, type: 3}
   skillReload: 8
+  summonHpMult: 1
 --- !u!114 &7504636529611728942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,6 +774,10 @@ PrefabInstance:
     - target: {fileID: 2260678722698182634, guid: f3ef98b9b63908540b15ea75adec1929, type: 3}
       propertyPath: m_Name
       value: Above Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128867066543259461, guid: f3ef98b9b63908540b15ea75adec1929, type: 3}
+      propertyPath: m_Value
+      value: 0.623
       objectReference: {fileID: 0}
     - target: {fileID: 3138138720593307541, guid: f3ef98b9b63908540b15ea75adec1929, type: 3}
       propertyPath: m_Color.b

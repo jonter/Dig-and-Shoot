@@ -23,17 +23,19 @@ public class AnybisBoss : EnemyBrain
     IEnumerator SummonCoroutine()
     {
         yield return new WaitForSeconds(skillReload);
-
+        while (isFrozen == true) yield return null;
         anim.SetTrigger("skill");
         rb.velocity = new Vector3();
         isAction = true;
         yield return new WaitForSeconds(1f);
+        while (isFrozen == true) yield return null;
         for (int i = 0; i < 3; i++)
         {
             StartCoroutine(SpawnSkeleton());
             yield return new WaitForSeconds(0.12f);
         }
         yield return new WaitForSeconds(0.8f);
+        while (isFrozen == true) yield return null;
         isAction = false;
         StartCoroutine(SummonCoroutine());
     }
