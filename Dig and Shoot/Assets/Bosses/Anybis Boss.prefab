@@ -669,7 +669,7 @@ MonoBehaviour:
   damage: 25
   enemyPrefab: {fileID: 7651784154023787937, guid: fe462a44dd769a74ca9242dfa173b1d8, type: 3}
   skillReload: 8
-  summonHpMult: 1
+  summonHpMult: 2.5
 --- !u!114 &7504636529611728942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
-  coinsForKill: 50
+  coinsForKill: 80
 --- !u!4 &2099355955732195348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2221872609835778665, guid: 9f620f9224fd9104ba7cd058d107740b, type: 3}

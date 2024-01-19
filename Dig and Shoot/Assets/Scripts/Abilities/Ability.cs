@@ -35,7 +35,7 @@ public abstract class Ability : MonoBehaviour
     protected virtual void Reload()
     {
         reloadPanel.fillAmount = 1;
-        reloadPanel.DOFillAmount(0, 30).SetEase(Ease.Linear);
+        reloadPanel.DOFillAmount(0, reloadTime).SetEase(Ease.Linear);
         StartCoroutine(ReloadCoroutine());
     }
 

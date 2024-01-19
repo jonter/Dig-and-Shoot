@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 150
-  coinsForKill: 30
+  coinsForKill: 50
 --- !u!4 &6461110860680257766 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2221872609835778665, guid: 9f620f9224fd9104ba7cd058d107740b, type: 3}

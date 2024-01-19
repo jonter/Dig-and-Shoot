@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public event Action OnWin;
     [SerializeField] TMP_Text waveText;
     [SerializeField] Wave[] waves;
-    float timeBetween = 5;
+    [SerializeField] float timeBetween = 7;
 
     int waveCount;
     int currentWave = 0;

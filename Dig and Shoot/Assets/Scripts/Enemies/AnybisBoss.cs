@@ -29,6 +29,7 @@ public class AnybisBoss : EnemyBrain
         isAction = true;
         yield return new WaitForSeconds(1f);
         while (isFrozen == true) yield return null;
+        if (enabled == false) yield break;
         for (int i = 0; i < 3; i++)
         {
             StartCoroutine(SpawnSkeleton());

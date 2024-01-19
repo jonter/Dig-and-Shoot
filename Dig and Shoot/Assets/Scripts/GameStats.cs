@@ -58,7 +58,7 @@ public class GameStats
         return FROSTTIME[level];
     }
 
-    static float[] BURSTDAMAGE = {0, 100, 250, 600, 1300, 2500, 4000, 5000};
+    static float[] BURSTDAMAGE = {0, 150, 300, 600, 1300, 2500, 4000, 5000};
 
     public static float GetBurstDamage()
     {
