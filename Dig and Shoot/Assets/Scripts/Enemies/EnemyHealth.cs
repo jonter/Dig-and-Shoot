@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     Slider healthBar;
     float maxHP;
 
+    SkinnedMeshRenderer mesh;
 
     public void IncreaseHP(float hpMult)
     {
@@ -27,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mesh = GetComponentInChildren<SkinnedMeshRenderer>();
         maxHP = hp;
         anim = GetComponent<Animator>();
         healthBar = GetComponentInChildren<Slider>();
@@ -50,6 +52,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Death()
     {
+        StartCoroutine(DissolveCoroutine());
         isAlive = false;
         GetComponent<EnemyBrain>().enabled = false;
         GetComponent<Collider>().enabled = false;
@@ -61,6 +64,22 @@ public class EnemyHealth : MonoBehaviour
 
         Destroy(gameObject, 5);
         FindObjectOfType<MoneyManager>().AddCoins(coinsForKill);
+    }
+
+
+    IEnumerator DissolveCoroutine()
+    {
+        yield return new WaitForSeconds(2.5f);
+        float t = 0;
+
+        while (t < 1)
+        {
+            t += Time.deltaTime;
+
+            mesh.material.SetFloat("_transparency", t);
+            yield return null;
+        }
+
     }
 
 }
