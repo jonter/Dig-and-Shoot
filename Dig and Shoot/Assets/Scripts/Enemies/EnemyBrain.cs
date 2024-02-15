@@ -14,9 +14,12 @@ public class EnemyBrain : MonoBehaviour
     protected BaseHealth target = null;
     protected bool isFrozen = false;
 
+    SkinnedMeshRenderer mesh;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        mesh = GetComponentInChildren<SkinnedMeshRenderer>();
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         rb.velocity = transform.forward * speed;
@@ -30,12 +33,14 @@ public class EnemyBrain : MonoBehaviour
 
     public IEnumerator FreezeEnemyCoroutine(float duration)
     {
+        mesh.material.SetInt("_frozen", 1);
         rb.velocity = new Vector3();
         anim.enabled = false;
         isFrozen = true;
         yield return new WaitForSeconds(duration);
         anim.enabled = true;
         isFrozen = false;
+        mesh.material.SetInt("_frozen", 0);
     }
 
     // Update is called once per frame

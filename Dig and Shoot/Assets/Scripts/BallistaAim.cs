@@ -26,8 +26,16 @@ public class BallistaAim : MonoBehaviour
 
     public IEnumerator EnableGhostCoroutine(float duration)
     {
-        isGhost = true; 
+        if(isReloaded == true)
+        {
+            Destroy(currentArrow.gameObject);
+            GameObject ghostArrow = Instantiate(ghostArrowPrefab, transform);
+            ghostArrow.transform.localPosition = startPos;
+            ghostArrow.transform.localRotation = startRot;
+            currentArrow = ghostArrow.GetComponent<Arrow>();
+        }
 
+        isGhost = true; 
         yield return new WaitForSeconds(duration);
         isGhost = false;
     }

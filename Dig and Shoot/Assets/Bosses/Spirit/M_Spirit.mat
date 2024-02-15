@@ -133,11 +133,11 @@ Material:
     - _metallic: -0.02
     - _scale: 8
     - _smoothness: 0.22
-    - _transparency: -0.1
+    - _transparency: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _line_color: {r: 1, g: 0, b: 0.045179844, a: 1}
+    - _line_color: {r: 0.9056604, g: 0.020505492, b: 0.062214073, a: 1}
   m_BuildTextureStacks: []
