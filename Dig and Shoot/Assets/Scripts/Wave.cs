@@ -26,5 +26,24 @@ public class Wave : ScriptableObject
 
     }
 
-    
+    public IEnumerator SpawnAllWave(Vector3 spawnerPos, float mHp, float mCoins)
+    {
+        mHp *= hpMult;
+        mCoins *= coinsMult;
+
+        for (int i = 0; i < enemyPrefabs.Length; i++)
+        {
+            float randomX = Random.Range(-12f, 12f);
+            Vector3 pos = spawnerPos + new Vector3(randomX, 0, 0);
+            Quaternion rot = Quaternion.Euler(0, 180, 0);
+            GameObject clone = Instantiate(enemyPrefabs[i], pos, rot);
+            clone.GetComponent<EnemyHealth>().IncreaseHP(mHp);
+            clone.GetComponent<EnemyHealth>().IncreaseCoins(mCoins);
+
+            yield return new WaitForSeconds(timeBetween);
+        }
+
+    }
+
+
 }

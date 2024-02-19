@@ -7,15 +7,15 @@ using System;
 public class EnemySpawner : MonoBehaviour
 {
     public event Action OnWin;
-    [SerializeField] TMP_Text waveText;
+    [SerializeField] protected TMP_Text waveText;
     [SerializeField] Wave[] waves;
-    [SerializeField] float timeBetween = 7;
+    [SerializeField] protected float timeBetween = 7;
 
     int waveCount;
-    int currentWave = 0;
+    protected int currentWave = 0;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         waveText.text = "";
         waveCount = waves.Length;

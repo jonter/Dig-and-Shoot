@@ -5,6 +5,7 @@ using UnityEngine;
 public class ExplosiveBarrel : MonoBehaviour
 {
     ParticleSystem burstVFX;
+    [SerializeField] AudioClip burstSound;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,8 @@ public class ExplosiveBarrel : MonoBehaviour
 
     protected virtual void MakeBoom()
     {
-        //Проиграть звук взрыва
+        AudioSource.PlayClipAtPoint(burstSound, Camera.main.transform.position);
+
         burstVFX.transform.parent = null;
         burstVFX.Play();
         Destroy(gameObject);

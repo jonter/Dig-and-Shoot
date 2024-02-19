@@ -20,6 +20,7 @@ public class FreezeAbility : Ability
     protected override void Activate()
     {
         if (isReloaded == false) return;
+        GetComponent<AudioSource>().Play();
         Vector3 pos = new Vector3(0, 0.2f, 25);
         Instantiate(frostVFX, pos, Quaternion.identity);
         Reload();

@@ -57,6 +57,7 @@ public class EnemyHealth : MonoBehaviour
         GetComponent<EnemyBrain>().enabled = false;
         GetComponent<Collider>().enabled = false;
         healthBar.gameObject.SetActive(false);
+        GetComponent<AudioSource>().Play();
 
         int rand = Random.Range(0, 2);
         if (rand == 0) anim.SetTrigger("death1");

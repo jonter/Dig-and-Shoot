@@ -24,6 +24,8 @@ public class BallistaAim : MonoBehaviour
     float animSpeed;
     bool isGhost = false;
 
+    AudioSource audio;
+
     public IEnumerator EnableGhostCoroutine(float duration)
     {
         if(isReloaded == true)
@@ -53,6 +55,7 @@ public class BallistaAim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         fireRate = GameStats.GetFireRate();
         animSpeed = 1 / fireRate;
         currentArrow = GetComponentInChildren<Arrow>(); 
@@ -108,6 +111,7 @@ public class BallistaAim : MonoBehaviour
     IEnumerator ShootCoroutine()
     {
         if (isReloaded == false) yield break;
+        audio.Play();
         currentArrow.Launch();
         currentArrow.transform.parent = null;
         isReloaded = false;

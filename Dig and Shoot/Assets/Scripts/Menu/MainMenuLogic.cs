@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuLogic : MonoBehaviour
 {
+    [SerializeField] int levelCount = 10;
+    [SerializeField] Button infiniteButton;
     [SerializeField] Button startButton;
     [SerializeField] Button levelsButton;
     [SerializeField] Button upgradesButton;
@@ -38,8 +40,12 @@ public class MainMenuLogic : MonoBehaviour
         int maxLevel = PlayerPrefs.GetInt("level");
         if (maxLevel > 0) startButtonText.text = "Продолжить";
 
+        infiniteButton.onClick.AddListener(StartGame);
+        if(maxLevel < levelCount) infiniteButton.gameObject.SetActive(false);
         startButton.onClick.AddListener(StartGame);
     }
+
+    
 
     void StartGame()
     {
@@ -56,9 +62,11 @@ public class MainMenuLogic : MonoBehaviour
         Camera.main.transform.DOMove(cavePoint.position, 1);
         Camera.main.transform.DORotate(cavePoint.eulerAngles, 1);
         TransitionPanel.ShowPanel();
+        MainMusic.SetBattleMusic();
         yield return new WaitForSeconds(1);
         int index = PlayerPrefs.GetInt("level");
         SceneManager.LoadScene(index + 1);
+        
     }
 
     public IEnumerator LoadLevelCoroutine(int level)
@@ -73,9 +81,11 @@ public class MainMenuLogic : MonoBehaviour
         Camera.main.transform.DOMove(cavePoint.position, 1);
         Camera.main.transform.DORotate(cavePoint.eulerAngles, 1);
         TransitionPanel.ShowPanel();
+        MainMusic.SetBattleMusic();
         yield return new WaitForSeconds(1);
         
         SceneManager.LoadScene(level);
+        
     }
 
     void GoUpgrades()

@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1753600a2a2223743b58b0ce4fd4beae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  burstSound: {fileID: 8300000, guid: f3c1cebed9a583c498ce5261d9d286ad, type: 3}
 --- !u!1001 &1970124350164095925
 PrefabInstance:
   m_ObjectHideFlags: 0

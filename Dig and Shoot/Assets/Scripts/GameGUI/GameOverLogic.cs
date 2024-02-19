@@ -109,6 +109,7 @@ public class GameOverLogic : MonoBehaviour
     IEnumerator GoMenuCoroutine()
     {
         TransitionPanel.ShowPanel();
+        MainMusic.SetMenuMusic();
         yield return new WaitForSecondsRealtime(1);
         SceneManager.LoadScene("Menu");
     }
