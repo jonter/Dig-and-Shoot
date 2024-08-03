@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 869f2f7fe6f665f49a934ed617bf95b8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.9
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 869f2f7fe6f665f49a934ed617bf95b8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.9
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 869f2f7fe6f665f49a934ed617bf95b8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.9
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 869f2f7fe6f665f49a934ed617bf95b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cba79abb7507746babb2d0871a02e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 90
+  hp: 80
   coinsForKill: 15
 --- !u!82 &1141377076129230239
 AudioSource:
@@ -626,7 +626,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 15566a15344f4c54d9fa42cf72256322, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.8
   m_Pitch: 1.5
   Loop: 0

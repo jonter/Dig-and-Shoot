@@ -45,5 +45,6 @@ public abstract class Ability : MonoBehaviour
         yield return new WaitForSeconds(reloadTime);
         isReloaded = true;
     }
-    
+
+
 }

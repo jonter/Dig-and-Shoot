@@ -685,7 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cba79abb7507746babb2d0871a02e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 200
+  hp: 230
   coinsForKill: 80
 --- !u!82 &838916195722595091
 AudioSource:

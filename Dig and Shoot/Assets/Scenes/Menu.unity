@@ -7216,7 +7216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4866538990924238, guid: e499751c4b88a6847844b1030ad4bca2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.449091
+      value: 18.42
       objectReference: {fileID: 0}
     - target: {fileID: 4866538990924238, guid: e499751c4b88a6847844b1030ad4bca2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8117,7 +8117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4851138950439020, guid: 60c48c7fa7d5ca042b69471ced14c62e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.51909
+      value: 18.32
       objectReference: {fileID: 0}
     - target: {fileID: 4851138950439020, guid: 60c48c7fa7d5ca042b69471ced14c62e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9653,7 +9653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6634ccef58854684daf48b43e4f85180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonCount: 10
+  buttonCount: 15
 --- !u!114 &1260025583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11595,7 +11595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4766905206039884, guid: 654498c8b5c4ef64384d848742d6c4e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.92909
+      value: 18.42
       objectReference: {fileID: 0}
     - target: {fileID: 4766905206039884, guid: 654498c8b5c4ef64384d848742d6c4e1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12209,7 +12209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72ca5d31e0747c4b80a1b86660bb99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelCount: 10
+  levelCount: 15
   infiniteButton: {fileID: 1908524537}
   startButton: {fileID: 1640133443}
   levelsButton: {fileID: 527318629}

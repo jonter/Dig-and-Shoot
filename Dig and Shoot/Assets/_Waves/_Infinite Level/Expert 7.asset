@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88302b50cb2196f4c897770749c143db, type: 3}
+  m_Name: Expert 7
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 5458009342628356062, guid: e112047f6cbde674d80d16078c4c047e, type: 3}
+  - {fileID: 1096254403362887468, guid: edc1cb6692707ac498236b83083d3bdd, type: 3}
+  - {fileID: 1855402051819931713, guid: 26f8f599edcd97542a5a2cfde249000f, type: 3}
+  - {fileID: 5216827155559043721, guid: a2fffd41611deee4bb670ad2f715216e, type: 3}
+  timeBetween: 1.5
+  hpMult: 1
+  coinsMult: 1

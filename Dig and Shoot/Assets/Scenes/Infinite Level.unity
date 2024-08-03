@@ -901,6 +901,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate
       objectReference: {fileID: 0}
+    - target: {fileID: 164216, guid: c39c4cd0967de674eb0b5c00da3fdccd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 467916, guid: c39c4cd0967de674eb0b5c00da3fdccd, type: 3}
       propertyPath: m_LocalScale.x
       value: 8
@@ -2387,6 +2391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lightning
       objectReference: {fileID: 0}
+    - target: {fileID: 5911030754584460729, guid: b3a458ec8436d4646b9338e5a78ac1ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5122233731267305436, guid: b3a458ec8436d4646b9338e5a78ac1ce, type: 3}
@@ -2681,30 +2689,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveText: {fileID: 133354503}
   waves: []
-  timeBetween: 6
+  timeBetween: 8
   easyWaves:
   - {fileID: 11400000, guid: 022073fd6b3d86f4690c9bbf908f1122, type: 2}
   - {fileID: 11400000, guid: c8a010fe570ed704bb0e6ceab525c275, type: 2}
   - {fileID: 11400000, guid: 17248d9c0385bd94c8db81a47affe17b, type: 2}
   - {fileID: 11400000, guid: 9d484653fc7616e4b857ac8d7cbc629f, type: 2}
   - {fileID: 11400000, guid: 2ad5bd6ae4829f44897b7538ffe4e3d1, type: 2}
+  - {fileID: 11400000, guid: 04794f058baf84d4e9ab0cb078930944, type: 2}
   normalWaves:
   - {fileID: 11400000, guid: 2d08a62c8b53fd24991fb10af0573ff0, type: 2}
   - {fileID: 11400000, guid: ca73fae8f7efcd746a242c6756024957, type: 2}
   - {fileID: 11400000, guid: d0b5154d939af6b4d9a22da93e2e4c99, type: 2}
   - {fileID: 11400000, guid: 48bb69e216bc0c84eba2a6d2e1a97573, type: 2}
   - {fileID: 11400000, guid: 85c2a3b2f7710f94690c5023c6c8e8c7, type: 2}
+  - {fileID: 11400000, guid: 05c664dce3b550443b42fa6300b7592b, type: 2}
   hardWaves:
   - {fileID: 11400000, guid: 983c6d2e930bcab479c9cb4485a0cd75, type: 2}
   - {fileID: 11400000, guid: 3323838640d551449b21e345f3c2dace, type: 2}
   - {fileID: 11400000, guid: 64962112c5fb28242af8716444f81b7a, type: 2}
   - {fileID: 11400000, guid: 2f4904111574f5141a1e208e660bda5b, type: 2}
   - {fileID: 11400000, guid: 5648896b0ce0c86419bed2e934c0cc10, type: 2}
+  - {fileID: 11400000, guid: fb1d9716ef3a34445bf53fb1365bc8f8, type: 2}
   expertWaves:
   - {fileID: 11400000, guid: 12cec0812c36cab4fbe6a60d048b4c28, type: 2}
   - {fileID: 11400000, guid: c66308c4cb3cf6e4eb3074803e855b30, type: 2}
   - {fileID: 11400000, guid: 0f72ecaa992490b429824a02b2e611d3, type: 2}
   - {fileID: 11400000, guid: be72eeaa65c4ed24eb115be8db881776, type: 2}
+  - {fileID: 11400000, guid: 26bb9b6994344fd4081f995cdae3439c, type: 2}
+  - {fileID: 11400000, guid: 7d78ea2f64f42ae4c8a086a95f864b5c, type: 2}
+  - {fileID: 11400000, guid: dfabb9e2c3990714faf62e54310399b6, type: 2}
 --- !u!4 &1677046644
 Transform:
   m_ObjectHideFlags: 0
@@ -3525,6 +3539,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base
       objectReference: {fileID: 0}
+    - target: {fileID: 9113547704015867434, guid: 2ddb1053233b2f74385ce8226b6d2f43, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3541,6 +3559,10 @@ PrefabInstance:
     - target: {fileID: 1928745291402624222, guid: e2aa2dcca0b98ce4cbee4eaa47058a48, type: 3}
       propertyPath: m_Name
       value: Ballista
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928745291402624222, guid: e2aa2dcca0b98ce4cbee4eaa47058a48, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2565907378789572333, guid: e2aa2dcca0b98ce4cbee4eaa47058a48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3639,6 +3661,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 9141657666062990918, guid: 432e5ffb6825a264499fd91ab68f818d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3663,6 +3689,10 @@ PrefabInstance:
     - target: {fileID: 1635246592643497485, guid: ffa7864d982a23a4498113a70adb88dc, type: 3}
       propertyPath: m_Name
       value: Barrels On Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635246592643497485, guid: ffa7864d982a23a4498113a70adb88dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3304593463132289162, guid: ffa7864d982a23a4498113a70adb88dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3745,17 +3775,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Abilities
       objectReference: {fileID: 0}
+    - target: {fileID: 2517376439229629452, guid: dec5b4d767306a84188ca73deebb0039, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6245466091750895247, guid: dec5b4d767306a84188ca73deebb0039, type: 3}
       propertyPath: skillButton
       value: 
       objectReference: {fileID: 574121198}
     - target: {fileID: 8039555877609966799, guid: dec5b4d767306a84188ca73deebb0039, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8039555877609966799, guid: dec5b4d767306a84188ca73deebb0039, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8039555877609966799, guid: dec5b4d767306a84188ca73deebb0039, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8039555877609966799, guid: dec5b4d767306a84188ca73deebb0039, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 8039555877609966799, guid: dec5b4d767306a84188ca73deebb0039, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 8039555877609966799, guid: dec5b4d767306a84188ca73deebb0039, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3767,15 +3813,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8039555877609966799, guid: dec5b4d767306a84188ca73deebb0039, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8039555877609966799, guid: dec5b4d767306a84188ca73deebb0039, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8039555877609966799, guid: dec5b4d767306a84188ca73deebb0039, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8039555877609966799, guid: dec5b4d767306a84188ca73deebb0039, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3834,9 +3880,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 614547090263703949, guid: 80232e121c7dcdf47bf41be09a8e29bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 744513286324765547, guid: 80232e121c7dcdf47bf41be09a8e29bf, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 744513286324765547, guid: 80232e121c7dcdf47bf41be09a8e29bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1327759507828869233, guid: 80232e121c7dcdf47bf41be09a8e29bf, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4070,6 +4124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Aim Plane
       objectReference: {fileID: 0}
+    - target: {fileID: 6450264993299573120, guid: f18c78e6a82d54548b296f18af0a49d3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4155,6 +4213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Parameters
       objectReference: {fileID: 0}
+    - target: {fileID: 2707803240990163202, guid: 2cae799862580b04c8188e5adc2c1cbf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4172,8 +4234,8 @@ SceneRoots:
   - {fileID: 6331411362357758926}
   - {fileID: 1452169270}
   - {fileID: 4392244544639967326}
-  - {fileID: 6175010895901928929}
   - {fileID: 9075561839330622811}
+  - {fileID: 6175010895901928929}
   - {fileID: 1590738929}
   - {fileID: 641973515}
   - {fileID: 1677046644}

@@ -12,7 +12,7 @@ public class TestParameters : MonoBehaviour
     [SerializeField] int frostLevel;
     [SerializeField] int barrelLevel;
 
-    private void Awake()
+    /*private void Awake()
     {
         PlayerPrefs.SetInt("damage", damageLevel);
         PlayerPrefs.SetInt("firerate", fireRateLevel);
@@ -21,7 +21,7 @@ public class TestParameters : MonoBehaviour
         PlayerPrefs.SetInt("ghost", ghostLevel);
         PlayerPrefs.SetInt("frost", frostLevel);
         PlayerPrefs.SetInt("burst", barrelLevel);
-    }
+    }*/
 
 
 }

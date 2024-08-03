@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOverLogic : MonoBehaviour
 {
@@ -12,12 +13,17 @@ public class GameOverLogic : MonoBehaviour
     bool isOver = false;
     bool isAnim = false;
 
+    [SerializeField] Button winAdsButton;
+    [SerializeField] Button loseAdsButton;
+
     // Start is called before the first frame update
     void Start()
     {
         FindObjectOfType<BaseHealth>().OnDeath += Lose;
         FindObjectOfType<EnemySpawner>().OnWin += Win;
         TransitionPanel.HidePanel();
+        winAdsButton.onClick.AddListener(ShowAds);
+        loseAdsButton.onClick.AddListener(ShowAds);
     }
 
     private void OnDisable()
@@ -117,13 +123,21 @@ public class GameOverLogic : MonoBehaviour
     public void ShowAds()
     {
         if (isAnim == true) return;
-        
+        print("Начался показ рекламы");
+        loseAdsButton.interactable = false;
+        winAdsButton.interactable = false;
+        // Вызвать функцию показа рекламы на стороннем сервисе
+    }
+
+    // Эту функцию нужно использовать при успешном просмотре рекламы
+    public void RewardForAd()
+    {
         int coinsForRound = FindObjectOfType<MoneyManager>().GetCoins();
+        SaveCoins(coinsForRound);
         coinsForRound = coinsForRound * 2;
         GetComponentInChildren<RoundMoney>().DisplayMoney(coinsForRound);
-
     }
 
 
-    
+
 }

@@ -63,7 +63,7 @@ public class EnemyHealth : MonoBehaviour
         if (rand == 0) anim.SetTrigger("death1");
         else anim.SetTrigger("death2");
 
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 7);
         FindObjectOfType<MoneyManager>().AddCoins(coinsForKill);
     }
 

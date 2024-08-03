@@ -15,7 +15,6 @@ public class EnemyBrain : MonoBehaviour
     protected bool isFrozen = false;
 
     SkinnedMeshRenderer mesh;
-
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -29,10 +28,12 @@ public class EnemyBrain : MonoBehaviour
     {
         if (rb == null) return;
         rb.velocity = new Vector3();
+
     }
 
     public IEnumerator FreezeEnemyCoroutine(float duration)
     {
+        if (rb.velocity.magnitude < 0.1f) yield break; 
         mesh.material.SetInt("_frozen", 1);
         rb.velocity = new Vector3();
         anim.enabled = false;

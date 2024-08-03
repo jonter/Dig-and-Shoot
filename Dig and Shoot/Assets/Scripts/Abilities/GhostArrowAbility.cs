@@ -18,6 +18,7 @@ public class GhostArrowAbility : Ability
     }
     protected override void Activate()
     {
+        if (PauseLogic.isPaused == true) return;
         if (isReloaded == false) return;
         BallistaAim ballista = FindObjectOfType<BallistaAim>();
         StartCoroutine(ballista.EnableGhostCoroutine(abilityDuration));

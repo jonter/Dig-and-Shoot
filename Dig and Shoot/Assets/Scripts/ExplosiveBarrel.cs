@@ -6,17 +6,18 @@ public class ExplosiveBarrel : MonoBehaviour
 {
     ParticleSystem burstVFX;
     [SerializeField] AudioClip burstSound;
-
+    BaseHealth bHealth;
     // Start is called before the first frame update
     void Start()
     {
         burstVFX = GetComponentInChildren<ParticleSystem>();
-        FindObjectOfType<BaseHealth>().OnDeath += MakeBoom;
+        bHealth= FindObjectOfType<BaseHealth>();
+        bHealth.OnDeath += MakeBoom;
     }
 
     private void OnDisable()
     {
-        FindObjectOfType<BaseHealth>().OnDeath -= MakeBoom;
+        bHealth.OnDeath -= MakeBoom;
     }
 
     protected virtual void MakeBoom()

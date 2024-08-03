@@ -19,6 +19,7 @@ public class BarrelWithDamage : ExplosiveBarrel
         StartCoroutine(BurstWithDelay());
     }
 
+
     IEnumerator BurstWithDelay()
     {
         yield return new WaitForSeconds(2);
@@ -26,6 +27,10 @@ public class BarrelWithDamage : ExplosiveBarrel
         transform.DOKill();
     }
 
+    private void OnDestroy()
+    {
+        transform.DOKill();
+    }
 
     protected override void MakeBoom()
     {

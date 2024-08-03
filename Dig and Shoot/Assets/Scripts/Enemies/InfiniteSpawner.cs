@@ -9,8 +9,8 @@ public class InfiniteSpawner : EnemySpawner
     [SerializeField] Wave[] hardWaves;
     [SerializeField] Wave[] expertWaves;
 
-    float hpMult = 5;
-    float coinsMult = 3;
+    float hpMult = 3;
+    float coinsMult = 2.6f;
 
     public int GetWaveNum()
     {
@@ -19,8 +19,7 @@ public class InfiniteSpawner : EnemySpawner
 
     protected override void Start()
     {
-        currentWave = 60;
-        hpMult = 10;
+        currentWave = 0;
         waveText.text = "";
         StartCoroutine(SpawnCoroutine());
     }
@@ -30,12 +29,13 @@ public class InfiniteSpawner : EnemySpawner
     {
         yield return new WaitForSeconds(timeBetween);
         currentWave++;
+        if (currentWave >= 80) timeBetween = 4;
         waveText.text = "Волна: " + currentWave;
         Wave w = SelectWave();
         
         yield return StartCoroutine(w.SpawnAllWave(transform.position, hpMult, coinsMult));
         hpMult += 0.1f;
-        coinsMult += 0.1f;
+        coinsMult += 0.05f;
 
         StartCoroutine(SpawnCoroutine());
     }

@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 846728657306890406}
   - component: {fileID: 2068575872607026273}
   - component: {fileID: 6312957135871854020}
+  - component: {fileID: 5424453651945537849}
   m_Layer: 5
   m_Name: Ghost Arrow Button
   m_TagString: Untagged
@@ -405,6 +406,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5424453651945537849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614547090263703949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f509c8b53b13b44195d8d44822744b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reloadImage: {fileID: 4847166053283342133}
 --- !u!1 &618896612396552255
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +707,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winPanel: {fileID: 2009178489313921286}
   losePanel: {fileID: 5562925127418631805}
+  winAdsButton: {fileID: 3129289572390811263}
+  loseAdsButton: {fileID: 8102517377411394770}
 --- !u!1 &769672043730087348
 GameObject:
   m_ObjectHideFlags: 0
@@ -2589,6 +2605,7 @@ GameObject:
   - component: {fileID: 6922909025491513703}
   - component: {fileID: 4204452970136596224}
   - component: {fileID: 5138798847281111191}
+  - component: {fileID: 3729129301283537335}
   m_Layer: 5
   m_Name: Barrel Button
   m_TagString: Untagged
@@ -2699,6 +2716,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3729129301283537335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4427350378223258474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f509c8b53b13b44195d8d44822744b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reloadImage: {fileID: 5648411177808324727}
 --- !u!1 &4462849620716494571
 GameObject:
   m_ObjectHideFlags: 0
@@ -4046,6 +4076,7 @@ GameObject:
   - component: {fileID: 6372883268709025926}
   - component: {fileID: 5628807403329731244}
   - component: {fileID: 7499460552489431199}
+  - component: {fileID: 4228108502962480750}
   m_Layer: 5
   m_Name: FastShoot Button
   m_TagString: Untagged
@@ -4156,6 +4187,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4228108502962480750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6060601398203539896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f509c8b53b13b44195d8d44822744b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reloadImage: {fileID: 447427659778003596}
 --- !u!1 &6073216514291985998
 GameObject:
   m_ObjectHideFlags: 0
@@ -5693,6 +5737,7 @@ GameObject:
   - component: {fileID: 8498678569604217609}
   - component: {fileID: 9154896564373726644}
   - component: {fileID: 6127129271823168902}
+  - component: {fileID: 2006279746848457898}
   m_Layer: 5
   m_Name: Frost Button
   m_TagString: Untagged
@@ -5803,6 +5848,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2006279746848457898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8031297045703447634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f509c8b53b13b44195d8d44822744b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reloadImage: {fileID: 7668000396674512907}
 --- !u!1 &8407845858928694364
 GameObject:
   m_ObjectHideFlags: 0

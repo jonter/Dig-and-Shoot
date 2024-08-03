@@ -19,6 +19,7 @@ public class FreezeAbility : Ability
     }
     protected override void Activate()
     {
+        if (PauseLogic.isPaused == true) return;
         if (isReloaded == false) return;
         GetComponent<AudioSource>().Play();
         Vector3 pos = new Vector3(0, 0.2f, 25);

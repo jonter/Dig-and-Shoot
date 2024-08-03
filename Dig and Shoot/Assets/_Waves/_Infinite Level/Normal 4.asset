@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Normal 4
   m_EditorClassIdentifier: 
   enemyPrefabs:
+  - {fileID: 8710094488650959603, guid: 54a6b1a83b22189428640dc85de2bb5b, type: 3}
   - {fileID: 5458009342628356062, guid: e112047f6cbde674d80d16078c4c047e, type: 3}
   - {fileID: 8710094488650959603, guid: 54a6b1a83b22189428640dc85de2bb5b, type: 3}
-  - {fileID: 8710094488650959603, guid: 54a6b1a83b22189428640dc85de2bb5b, type: 3}
   timeBetween: 1.2
-  hpMult: 1.6
+  hpMult: 1.5
   coinsMult: 1

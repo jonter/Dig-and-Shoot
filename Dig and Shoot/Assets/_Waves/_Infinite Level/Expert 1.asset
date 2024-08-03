@@ -19,6 +19,6 @@ MonoBehaviour:
   - {fileID: 1855402051819931713, guid: 26f8f599edcd97542a5a2cfde249000f, type: 3}
   - {fileID: 1855402051819931713, guid: 26f8f599edcd97542a5a2cfde249000f, type: 3}
   - {fileID: 1855402051819931713, guid: 26f8f599edcd97542a5a2cfde249000f, type: 3}
-  timeBetween: 1
+  timeBetween: 0.8
   hpMult: 1
   coinsMult: 1

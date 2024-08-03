@@ -29,6 +29,7 @@ public class BarrelAbility : Ability
 
     protected override void Activate()
     {
+        if (PauseLogic.isPaused == true) return;
         if (isReloaded == false) return;
         if (isActive == true) return;
         skillButton.transform.DOScale(1.05f, 0.5f).SetLoops(-1, LoopType.Yoyo).SetUpdate(true);
@@ -90,6 +91,11 @@ public class BarrelAbility : Ability
             aimPoint.transform.position = hitInfo.point;
         }
 
+    }
+
+    void OnDisable()
+    {
+        trolley.DOKill();
     }
 
 
