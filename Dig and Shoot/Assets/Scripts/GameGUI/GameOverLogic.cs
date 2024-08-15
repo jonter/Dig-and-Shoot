@@ -26,9 +26,15 @@ public class GameOverLogic : MonoBehaviour
         loseAdsButton.onClick.AddListener(ShowAds);
     }
 
+    private void OnEnable()
+    {
+        AdsManager.Instance.rewarded.OnReward += RewardForAd;
+    }
+
     private void OnDisable()
     {
         Time.timeScale = 1;
+        AdsManager.Instance.rewarded.OnReward -= RewardForAd;
     }
 
     public void Win()
@@ -43,6 +49,7 @@ public class GameOverLogic : MonoBehaviour
         StartCoroutine(SlowTime());
         SaveCoins(coinsForRound);
         SaveLevel();
+        ShowInterstitial();
     }
 
     void SaveCoins(int coins)
@@ -75,6 +82,7 @@ public class GameOverLogic : MonoBehaviour
         losePanel.transform.DOScale(1, 0.4f).SetEase(Ease.OutBack).SetUpdate(true);
         StartCoroutine(SlowTime());
         SaveCoins(coinsForRound);
+        ShowInterstitial();
     }
 
     IEnumerator SlowTime()
@@ -126,6 +134,7 @@ public class GameOverLogic : MonoBehaviour
         print("Начался показ рекламы");
         loseAdsButton.interactable = false;
         winAdsButton.interactable = false;
+        AdsManager.Instance.rewarded.ShowAd();
         // Вызвать функцию показа рекламы на стороннем сервисе
     }
 
@@ -138,6 +147,18 @@ public class GameOverLogic : MonoBehaviour
         GetComponentInChildren<RoundMoney>().DisplayMoney(coinsForRound);
     }
 
+
+   /// Реклама на мобилки
+   /// 
+
+    void ShowInterstitial()
+    {
+        AdsManager.levelCount++;
+        if(AdsManager.levelCount % 3 == 0)
+        {
+            AdsManager.Instance.interstitial.ShowAd();
+        }
+    }
 
 
 }

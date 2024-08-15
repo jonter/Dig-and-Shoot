@@ -42,6 +42,8 @@ public class BarrelAbility : Ability
     {
         if (isActive == false) return;
         if (EventSystem.current.IsPointerOverGameObject() == true) return;
+        if (EventSystem.current.IsPointerOverGameObject(0) == true) return;
+        
 
         if (Input.GetKey(KeyCode.Mouse0))
         {

@@ -23,7 +23,7 @@ public class LevelButton : MonoBehaviour
     void LoadLevel()
     {
         MainMenuLogic mm = FindObjectOfType<MainMenuLogic>();
-        StartCoroutine(mm.LoadLevelCoroutine(levelIndex));
+        StartCoroutine(mm.LoadLevelCoroutine(levelIndex+1));
     }
 
 

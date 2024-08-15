@@ -85,6 +85,7 @@ public class BallistaAim : MonoBehaviour
     {
         if (Time.timeScale <= 0.1f) return;
         if (EventSystem.current.IsPointerOverGameObject() == true) return;
+        if (EventSystem.current.IsPointerOverGameObject(0) == true) return;
 
         if (Input.GetMouseButton(0))
         {

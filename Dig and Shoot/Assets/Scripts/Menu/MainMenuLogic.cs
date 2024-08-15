@@ -56,7 +56,7 @@ public class MainMenuLogic : MonoBehaviour
     IEnumerator StartGameCoroutine()
     {
         isAnim = true;
-        mainPanel.transform.DOLocalMoveY(1500, 0.5f).SetEase(Ease.InBack);
+        mainPanel.transform.DOLocalMoveY(2200, 0.5f).SetEase(Ease.InBack);
         yield return new WaitForSeconds(0.5f);
         mainPanel.SetActive(false);
         Camera.main.transform.DOMove(cavePoint.position, 1);
@@ -65,6 +65,7 @@ public class MainMenuLogic : MonoBehaviour
         MainMusic.SetBattleMusic();
         yield return new WaitForSeconds(1);
         int index = PlayerPrefs.GetInt("level");
+        if (index == 0) index = 1;
         SceneManager.LoadScene(index + 1);
         
     }
@@ -73,8 +74,8 @@ public class MainMenuLogic : MonoBehaviour
     {
         if (isAnim == true) yield break;
         isAnim = true;
-        mainPanel.transform.DOLocalMoveY(1500, 0.5f).SetEase(Ease.InBack);
-        levelPanel.transform.DOLocalMoveY(2000, 0.5f).SetEase(Ease.InBack);
+        mainPanel.transform.DOLocalMoveY(2200, 0.5f).SetEase(Ease.InBack);
+        levelPanel.transform.DOLocalMoveY(2200, 0.5f).SetEase(Ease.InBack);
         yield return new WaitForSeconds(0.5f);
         mainPanel.SetActive(false);
         
@@ -97,10 +98,10 @@ public class MainMenuLogic : MonoBehaviour
     IEnumerator ShowUpgrades()
     {
         isAnim = true;
-        mainPanel.transform.DOLocalMoveY(1500, 0.5f).SetEase(Ease.InBack);
+        mainPanel.transform.DOLocalMoveY(2200, 0.5f).SetEase(Ease.InBack);
         yield return new WaitForSeconds(0.5f);
         upgradesPanel.SetActive(true);
-        upgradesPanel.transform.localPosition = new Vector3(0, 1500, 0);
+        upgradesPanel.transform.localPosition = new Vector3(0, 2200, 0);
         upgradesPanel.transform.DOLocalMoveY(0, 0.5f).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(0.5f);
         mainPanel.SetActive(false);
@@ -116,10 +117,10 @@ public class MainMenuLogic : MonoBehaviour
     IEnumerator ShowLevels()
     {
         isAnim = true;
-        mainPanel.transform.DOLocalMoveY(1500, 0.5f).SetEase(Ease.InBack);
+        mainPanel.transform.DOLocalMoveY(2200, 0.5f).SetEase(Ease.InBack);
         yield return new WaitForSeconds(0.5f);
         levelPanel.SetActive(true);
-        levelPanel.transform.localPosition = new Vector3(0, 1500, 0);
+        levelPanel.transform.localPosition = new Vector3(0, 2200, 0);
         levelPanel.transform.DOLocalMoveY(0, 0.5f).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(0.5f);
         mainPanel.SetActive(false);
@@ -135,11 +136,11 @@ public class MainMenuLogic : MonoBehaviour
     IEnumerator BackMainCoroutine()
     {
         isAnim = true;
-        levelPanel.transform.DOLocalMoveY(1500, 0.5f).SetEase(Ease.InBack);
-        upgradesPanel.transform.DOLocalMoveY(1500, 0.5f).SetEase(Ease.InBack);
+        levelPanel.transform.DOLocalMoveY(2200, 0.5f).SetEase(Ease.InBack);
+        upgradesPanel.transform.DOLocalMoveY(2200, 0.5f).SetEase(Ease.InBack);
         yield return new WaitForSeconds(0.5f);
         mainPanel.SetActive(true);
-        mainPanel.transform.localPosition = new Vector3(0, 1500, 0);
+        mainPanel.transform.localPosition = new Vector3(0, 2200, 0);
         mainPanel.transform.DOLocalMoveY(0, 0.5f).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(0.5f);
         levelPanel.SetActive(false);
